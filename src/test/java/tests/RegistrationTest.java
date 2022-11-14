@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Before;
@@ -19,6 +20,7 @@ public class RegistrationTest extends BaseUISettings {
         driver.get("https://stellarburgers.nomoreparties.site/register");
     }
 
+    @DisplayName("Регистрация")
     @Test
     public void signUpPositive() {
         registerPage.fillName(String.valueOf(faker.name().fullName()));
@@ -31,6 +33,7 @@ public class RegistrationTest extends BaseUISettings {
         Assert.assertEquals(expectedURL, redirectedURL);
     }
 
+    @DisplayName("Регистрация с паролем, меньше чем 6 символов. Негативный кейс.")
     @Test
     public void signUpPasswordLessThanSixElementsNegative() {
         registerPage.fillName(String.valueOf(faker.name().fullName()));
@@ -39,5 +42,4 @@ public class RegistrationTest extends BaseUISettings {
         registerPage.clickRegisterButton();
         Assert.assertTrue(registerPage.isErrorOfIncorrectPasswordDisplayed());
     }
-
 }

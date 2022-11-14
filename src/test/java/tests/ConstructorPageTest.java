@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +16,7 @@ public class ConstructorPageTest extends BaseUISettings {
         constructor.waitFor5Seconds();
     }
 
+    @DisplayName("При нажатии на Булки отображаются нужные ингредиенты")
     @Test
     public void checkBunsListBeingDisplayedPositive() {
         constructor.clickFillings();
@@ -23,6 +25,7 @@ public class ConstructorPageTest extends BaseUISettings {
         Assert.assertTrue(constructor.isBunsSectionWasChosen());
     }
 
+    @DisplayName("При нажатии на Соусы отображаются нужные ингредиенты")
     @Test
     public void checkSaucesListBeingDisplayedPositive() {
         constructor.clickSauces();
@@ -30,6 +33,7 @@ public class ConstructorPageTest extends BaseUISettings {
         Assert.assertTrue(constructor.isSaucesSectionWasChosen());
     }
 
+    @DisplayName("При нажатии на Начинки отображаются нужные ингредиенты")
     @Test
     public void checkFillingsListBeingDisplayedPositive() {
         constructor.clickFillings();

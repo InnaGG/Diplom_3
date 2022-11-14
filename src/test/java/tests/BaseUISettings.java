@@ -19,5 +19,4 @@ public abstract class BaseUISettings {
     public void tearDown() {
         driver.quit();
     }
-
 }

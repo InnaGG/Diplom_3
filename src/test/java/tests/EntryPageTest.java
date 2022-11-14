@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +21,7 @@ public class EntryPageTest extends BaseUISettings {
         registerPage = new RegisterPage(driver);
     }
 
+    @DisplayName("Вход с главной странички")
     @Test
     public void entryFromMainPageEntryButtonPositive() {
         String email = "innageldyeva@mail.ru";
@@ -35,6 +37,7 @@ public class EntryPageTest extends BaseUISettings {
         Assert.assertTrue(isMainPageAppeared);
     }
 
+    @DisplayName("Вход при нажатии на кнопку в хедере")
     @Test
     public void entryFromAfterClickingUserAccountInHeaderPositive() {
         driver.get("https://stellarburgers.nomoreparties.site/");
@@ -52,6 +55,7 @@ public class EntryPageTest extends BaseUISettings {
         Assert.assertTrue(isMainPageAppeared);
     }
 
+    @DisplayName("Вход из формы Регистрации")
     @Test
     public void entryFromRegistryFormPositive() {
         driver.get("https://stellarburgers.nomoreparties.site/register");
@@ -67,6 +71,7 @@ public class EntryPageTest extends BaseUISettings {
         Assert.assertTrue(isMainPageAppeared);
     }
 
+    @DisplayName("Вход из формы сброса пароля")
     @Test
     public void entryFromResetPasswordPage() {
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage(driver);
@@ -82,5 +87,4 @@ public class EntryPageTest extends BaseUISettings {
         boolean isMainPageAppeared = constructor.isConstructorPanelHasAppeared();
         Assert.assertTrue(isMainPageAppeared);
     }
-
 }
